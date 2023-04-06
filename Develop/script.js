@@ -33,20 +33,34 @@
     // array of special characters
 
 var passwordLength = 8;
+var choice = []; // Arr = array
 var lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var uppercaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-var specialCase = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{','}', '<', '>']; 
+var specialCharacters = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{','}', '<', '>']; 
+
 
 function askPrompts() {
   passwordLength = parseInt(prompt("How many characters would you like your password to have? (10-128 characters"));
+
+  if (confirm("Would you like to use uppercase letters?")) {
+    choice = choice.concat(uppercaseLetters);
+  }
+  if (confirm("Would you like to use lowercase letters?")) {
+    choice = choice.concat(lowercaseLetters);
+  }
+  if (confirm("Would you like to use numbers?")) {
+    choice = choice.concat(numbers);
+  }
+  if (confirm("Would you like to use special characters?")) {
+    choice = choice.concat(specialCharacters);
+  }
+  return true;
 }
 
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword() {
 
-}
 
 function writePassword() {
   var password = generatePassword();
@@ -60,3 +74,4 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // console.log(Math.floor(Math.random() * 26)) ;
+// function generatePassword() {}
