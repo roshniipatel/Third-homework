@@ -2,10 +2,6 @@
 
 // Need the following variables:
 
-    // use .split('') to create arrays?
-    // to hold the password we're building
-    // possibly the mega-array
-
   // prompt for password length --> stored in a variable
   // Validate the user input --> if user chooses <8 or >128, alert that they need to choose a valid password length, then they're going to need to restart OR call the function that prompts for length again
   // prompt --> Do they want uppercase letters?
@@ -24,13 +20,12 @@
       // IF pushing to a mega-array, remember to set the array back to an empty array at the start of the process!
   // return the generated password
 
-// Write password to the #password input
 
-    // selected length of the password
-    // array of lowercase letters
-    // array of uppercase letters
-    // array of numbers
-    // array of special characters
+    // select length of the password
+    // lowercase letters
+    // uppercase letters
+    // numbers
+    // special characters
 
 var passwordLength = 8;
 var choice = []; // Arr = array
@@ -43,6 +38,10 @@ var specialCharacters = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', 
 function askPrompts() {
   passwordLength = parseInt(prompt("How many characters would you like your password to have? (10-128 characters"));
 
+  if (passwordLength <10 || passwordLength > 128) {
+    alert("Password must be between 10-128 characters long. Please try again.");
+    return false;
+  }
   if (confirm("Would you like to use uppercase letters?")) {
     choice = choice.concat(uppercaseLetters);
   }
@@ -60,9 +59,10 @@ function askPrompts() {
 
 var generateBtn = document.querySelector("#generate");
 
-
+generateBtn.addEventListener("click", writePassword);
 
 function writePassword() {
+  var rightPrompts = askPrompts();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -70,8 +70,13 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+function generatePassword() {
+  for(var i = 0; i < passwordLength; i++) {
+    var randomCharacter = Math.floor(Math.random() * choice.length)
+    password = password + choice[randomCharacter]; 
+  }
+  return password;
+}
+
 
 // console.log(Math.floor(Math.random() * 26)) ;
-// function generatePassword() {}
