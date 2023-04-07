@@ -16,7 +16,7 @@ var specialCharacters = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', 
 
 function askPrompts() {
   passwordLength = parseInt(prompt("How many characters would you like your password to have? (10-128 characters")); // chose number window for reference
-  var choice = []; // array
+  var choice = []; // an array
 
   if (passwordLength <10 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("Password must be between 10-128 characters long. Please try again.");
