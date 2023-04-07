@@ -17,3 +17,4 @@ Once it matches the criteria, the password will be generated and shown
 
 ## Link to the Deployed Application
 
+https://roshniipatel.github.io/password-generator-genie/ 
