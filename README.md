@@ -13,7 +13,7 @@ Once it matches the criteria, the password will be generated and shown
 
 ## Mock Up of my Application's appearance and functionality:
 
-![The Password Generator application displays a red button to "Generate Password".] (./Assets/my-password-generator.png)
+![The Password Generator application displays a red button to "Generate Password".](./Assets/my-password-generator.png)
 
 ## Link to the Deployed Application
 
